@@ -1,0 +1,16 @@
+#head-profile {
+  height: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top:120px;
+  background-color: #b9d100;
+  background-image: url("https://www.transparenttextures.com/patterns/robots.png");
+}
+
+.your-name {
+  text-align: center;
+  position: relative;
+  top:-50px;
+  z-index: auto;
+}

@@ -1,0 +1,42 @@
+.container {
+  width:90%;
+  position: relative;
+  left:5%;
+  right:5%;
+  text-align: center;
+}
+
+textarea {
+  font-family: 'Bungee', cursive;
+  font-size: 80%;
+  height:30px;
+  border:3px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-color:#545149;
+  border-bottom-style: solid;
+  width:500px;
+  background-color: #f4f1ec;
+}
+
+[value="Tweet"] {
+  font-family: 'Bungee', cursive;
+  color:white;
+  font-size:70%;
+  background-color: #4056A1;
+  position: relative;
+  float: left;
+  top:2.5em;
+  left:435px;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+  color:#545149;
+  font-size:70%;
+  position: relative;
+  float: right;
+  top:2.5em;
+  right:395px;
+}

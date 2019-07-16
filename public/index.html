@@ -6,9 +6,12 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -20,12 +23,31 @@
   <body>
 
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
+    <nav class="navbar fixed-top">
+      <span class="tweeter-logo">大哥</span>
+      <span class="todo"><strong>唠</strong> 嗑不</span>
     </nav>
+    <header>
+      <div id="head-profile">
+        <img src="https://static-s.aa-cdn.net/img/gp/20600002075516/WNcH_5uZL3kFlGhv_aZMFJzkMm2t2fZnQsCxjZ27g_XF_fn_GhNC9wJs2Rh8ZlPIYKU=s300">
+        <!-- <img src="https://www.sportspots.co.za/resources/images/social/twitter-icon.png"> -->
+      </div>
+      <br>
+      <div class="your-name">
+        <h2>十大杰出青年</h2>
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section>
+        <h2>Compose a Tweet</h2>
+          <form method="POST" action="http://localhost:8080/tweets">
+            <textarea name="text" placeholder="What are you humming about?"></textarea>
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </form>
+      </section>
     </main>
 
   </body>

@@ -1,0 +1,24 @@
+.navbar {
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  z-index: auto;
+  background-color: #4056A1;
+}
+
+.tweeter-logo {
+  font-family: 'Bungee', cursive; 
+  /* this font doesn't have lower case letters. */
+  position: fixed;
+  left: 1.5em;
+  margin: 1.5em;
+  color: #ffffff
+}
+
+.todo {
+  /* text-transform:lowercase; just keep as a reference*/
+  position: fixed;
+  right: 1.5em;
+  margin: 1.5em;
+  color: #ffffff
+}
