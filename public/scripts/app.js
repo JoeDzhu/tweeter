@@ -107,7 +107,14 @@ const loadTweets = () =>{
   // })
 };
 
+const showForm = () =>{
+  $("#compose").click(() =>{
+    $(".tweet-submit").toggle("slow");
+  })
+}
+
 $(document).ready(function(){
   postTweets();
-  loadTweets();//always use document.ready to load any js funcs;
+  loadTweets();
+  showForm();//always use document.ready to load any js funcs;
 });

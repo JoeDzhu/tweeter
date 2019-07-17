@@ -22,3 +22,20 @@
   margin: 1.5em;
   color: #ffffff
 }
+
+#compose {
+  position:fixed;
+  right:2em;
+  margin:3em;
+  animation: alarm-1 1s infinite;
+  background-color:transparent;
+  border: hidden;
+}
+
+@keyframes alarm-1 {
+  0% {top:0px;}
+  25% {top:5px;}
+  50% {top:10px;}
+  75% {top:5px;}
+  100% {top:0px;}
+}

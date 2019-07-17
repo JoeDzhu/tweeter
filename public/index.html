@@ -31,6 +31,7 @@
     <nav class="navbar fixed-top">
       <span class="tweeter-logo">Tweeter</span>
       <span class="todo"><strong>Write</strong> a Tweet</span>
+      <button id="compose">⏬</button>
     </nav>
     <header>
       <div id="head-profile">
@@ -46,8 +47,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section>
-        <h2>Tweet a Tweet</h2>
-          <form class="tweet-submit" method="POST" action="http://localhost:8080/tweets">
+        <h2></h2>
+          <form style="display:none;" class="tweet-submit" method="POST" action="http://localhost:8080/tweets">
             <textarea name="text" placeholder="What are you humming about?"></textarea>
             <div class="tweetCount">
               <input id="submitTweet" type="submit" value="Tweet">
