@@ -29,16 +29,24 @@
 //   }
 // ]
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  console.log(div.innerHTML);
+  return div.innerHTML;
+//in the console, malicious become &lt;script&gt;$('body').empty()&lt;/script&gt;
+};
+
 const createTweetElement = function(tweet) {
   const markup =`
     <article class="tweet">
     <header class="headProfile">
       <img src=${tweet.user.avatars}>
-      <a class="namePosition">${tweet.user.name}</a>            
-      <a>${tweet.user.handle}</a>
+      <a class="namePosition">${escape(tweet.user.name)}</a>            
+      <a>${escape(tweet.user.handle)}</a>
     </header>
     <div class="singleTweet">
-      <p>${tweet.content.text};</p>
+      <p>${escape(tweet.content.text)}</p>
     </div>
     <footer class="fot">
       <a>${new Date(tweet.created_at).getFullYear()}</a>
