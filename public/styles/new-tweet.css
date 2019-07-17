@@ -1,9 +1,12 @@
 .container {
   width:90%;
+  padding-left: 10em;
+  padding-right: 10em;
   position: relative;
   left:5%;
   right:5%;
   text-align: center;
+  overflow: scroll;
 }
 
 textarea {
@@ -16,7 +19,7 @@ textarea {
   border-left-style: hidden;
   border-bottom-color:#545149;
   border-bottom-style: solid;
-  width:500px;
+  width: 100%;
   background-color: #f4f1ec;
 }
 
@@ -25,18 +28,26 @@ textarea {
   color:white;
   font-size:70%;
   background-color: #4056A1;
-  position: relative;
-  float: left;
-  top:2.5em;
-  left:435px;
+}
+
+.tweetCount {
+  display: flex;
+  justify-content: space-between;
+  margin:5px auto;
 }
 
 .counter {
   font-family: 'Bungee', cursive;
   color:#545149;
   font-size:70%;
-  position: relative;
-  float: right;
-  top:2.5em;
-  right:395px;
 }
+
+.counter.error {
+  color:red;
+}
+
+  /* 此处语法和js不同，.只是表示class，和前面的counter是并列关系，也就是jQuery
+  会去找既有counter又有error的，进行处理；不过，前面counter要或者不要，都可以
+  但逻辑有所不同；
+  addClass(error)后，html中的既有又有的部分，会变红；如果没要前面的error，增加class
+  之后，html中，有error的会变红 */

@@ -12,20 +12,25 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
+
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!-- App JS -->
+  
+    
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav class="navbar fixed-top">
-      <span class="tweeter-logo">大哥</span>
-      <span class="todo"><strong>唠</strong> 嗑不</span>
+      <span class="tweeter-logo">Tweeter</span>
+      <span class="todo"><strong>Write</strong> a Tweet</span>
     </nav>
     <header>
       <div id="head-profile">
@@ -34,21 +39,37 @@
       </div>
       <br>
       <div class="your-name">
-        <h2>十大杰出青年</h2>
+        <h2>Joe Zhu</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section>
-        <h2>Compose a Tweet</h2>
-          <form method="POST" action="http://localhost:8080/tweets">
+        <h2>Tweet a Tweet</h2>
+          <form class="tweet-submit" method="POST" action="http://localhost:8080/tweets">
             <textarea name="text" placeholder="What are you humming about?"></textarea>
-            <input type="submit" value="Tweet">
-            <span class="counter">140</span>
+            <div class="tweetCount">
+              <input id="submitTweet" type="submit" value="Tweet">
+              <span class="counter">140</span>
+            </div>           
           </form>
       </section>
+      <section class="tweets">
+        <article class="tweet">
+          <header class="headProfile">
+            <img src="https://i.imgur.com/73hZDYK.png">
+            <a class="namePosition">name</a>            
+            <a>@SirIsaac</a>
+          </header>
+          <div class="singleTweet">
+            <p>Hodor,hodor,hodor;</p>
+          </div>
+          <footer class="fot">
+            <a>time</a>
+          </footer>
+        </article>
+      </section>
     </main>
-
   </body>
 </html>

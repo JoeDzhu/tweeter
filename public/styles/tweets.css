@@ -1,0 +1,45 @@
+.tweets {
+  display:flex;
+  height:600px;
+  background-color:#ffffff;
+  width:100%;
+  flex-direction:column;
+}
+
+.tweet {
+  padding:5px;
+  border:solid;
+  height:200px;
+  background-color:#ffffff;
+  width:100%;
+}
+
+.headProfile {
+  color:rgb(129, 123, 123);
+  display:flex;
+  justify-content: space-between;
+}
+
+/* .namePosition {
+  display: flex;
+fix this later;
+} */
+
+.tweet:hover {
+  color: rgb(14, 13, 13);
+  box-shadow:10px 10px 10px rgb(37, 37, 37);
+  z-index: 10;
+  font-weight: bolder;
+}
+
+.singleTweet {
+  display:flex;
+  align-items: left;
+  border-bottom: solid;
+
+}
+
+.fot {
+  display:flex;
+  align-items: left;
+}
