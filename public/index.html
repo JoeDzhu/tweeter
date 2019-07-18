@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+    <title>-TweeT-A-TweeT</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -35,8 +35,7 @@
     </nav>
     <header>
       <div id="head-profile">
-        <img src="https://static-s.aa-cdn.net/img/gp/20600002075516/WNcH_5uZL3kFlGhv_aZMFJzkMm2t2fZnQsCxjZ27g_XF_fn_GhNC9wJs2Rh8ZlPIYKU=s300">
-        <!-- <img src="https://www.sportspots.co.za/resources/images/social/twitter-icon.png"> -->
+        <img src="images/Raptors.png">
       </div>
       <br>
       <div class="your-name">
@@ -47,27 +46,32 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section>
-        <h2></h2>
-          <form style="display:none;" class="tweet-submit" method="POST" action="http://localhost:8080/tweets">
-            <textarea name="text" placeholder="What are you humming about?"></textarea>
-            <div class="tweetCount">
-              <input id="submitTweet" type="submit" value="Tweet">
-              <span class="counter">140</span>
-            </div>           
-          </form>
+        <div class="stop-typing" style="display: none">☠Hey you, stop right there. No more than 140 chars.☠</div>
+        <form style="display:none;" class="tweet-submit" method="POST" action="http://localhost:8080/tweets">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <div class="tweetCount">
+            <input id="submitTweet" type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </div>           
+        </form>
       </section>
       <section class="tweets">
         <article class="tweet">
           <header class="headProfile">
             <img src="https://i.imgur.com/73hZDYK.png">
-            <a class="namePosition">name</a>            
+            <a class="namePosition">Newton</a>            
             <a>@SirIsaac</a>
           </header>
           <div class="singleTweet">
-            <p>Hodor,hodor,hodor;</p>
+            <p>Don't you dare throw another apple on me;</p>
           </div>
           <footer class="fot">
-            <a>time</a>
+            <div>145 days ago</div>
+            <div>
+              <img src="images/icons8-empty-flag-24.png">
+              <img src="images/icons8-facebook-like-24.png">
+              <img src="images/icons8-retweet-24.png">
+            </div>
           </footer>
         </article>
       </section>

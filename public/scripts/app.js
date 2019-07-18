@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "Don't you dare throw another apple on me"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -57,9 +32,10 @@ const createTweetElement = function(tweet) {
 };
 // moment.fromNow(true) doesn't work?
 const renderTweets = function(tweets) {
+  const $tweetAtweet = $(".tweets");
   for(tweet of tweets) {
     let $template = createTweetElement(tweet);
-    $(".tweets").prepend($template);//此处不要用id，id是唯一的，如果是loop的，id重名了，但class就没啥问题；
+    $tweetAtweet.prepend($template);//此处不要用id，id是唯一的，如果是loop的，id重名了，但class就没啥问题；
   }
 };
 
@@ -77,18 +53,20 @@ const postTweets = () =>{
       alert("Type something.");
     }
   
-    if (inputLen > 140) {
-      alert("Stop, too much.");
-      stopEvent(e);
+    else if (inputLen > 140) {
+      $(".stop-typing").slideDown();
     }
 
-    $.ajax({
-    url: "http://localhost:8080/tweets", 
-    method: "POST",
-    data: $(this).serialize()//don't need to get the value to serialize, the value/data is the input;
-    })
+    else {
+      $(".stop-typing").slideUp();
 
-    loadTweets();
+      $.ajax({
+        url: "http://localhost:8080/tweets", 
+        method: "POST",
+        data: $(this).serialize()//don't need to get the value to serialize, the value/data is the input;
+        })
+      .then(loadTweets);
+    }    
   })
 };
 
@@ -102,9 +80,9 @@ const loadTweets = () =>{
       method: "GET",
     })
     .then(function (moretweets) {
-      renderTweets(moretweets);
+      renderTweets(moretweets.slice(2));
     })
-  // })
+
 };
 
 const showForm = () =>{
