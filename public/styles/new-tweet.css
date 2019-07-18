@@ -1,12 +1,7 @@
 .container {
-  width:90%;
-  padding-left: 10em;
-  padding-right: 10em;
-  position: relative;
-  left:5%;
-  right:5%;
+  width:100%;
+  padding:2rem;
   text-align: center;
-  overflow: scroll;
 }
 
 textarea {

@@ -13,18 +13,33 @@ const escape =  function(str) {
 };
 
 const createTweetElement = function(tweet) {
+//   <header class="headProfile">
+//   <div>
+//     <img src="https://i.imgur.com/73hZDYK.png">
+//     <a>Newton</a>
+//   </div>
+//   <div>@SirIsaac</div>
+// </header>
+
   const markup =`
     <article class="tweet">
     <header class="headProfile">
-      <img src=${tweet.user.avatars}>
-      <a class="namePosition">${escape(tweet.user.name)}</a>            
-      <a>${escape(tweet.user.handle)}</a>
+      <div>
+        <img src=${tweet.user.avatars}>
+        <a>${escape(tweet.user.name)}</a>
+      </div>            
+      <div>${escape(tweet.user.handle)}</div>
     </header>
     <div class="singleTweet">
       <p>${escape(tweet.content.text)}</p>
     </div>
     <footer class="fot">
-      <a>${new Date(tweet.created_at).getFullYear()}</a>
+      <a>${moment(tweet.created_at).fromNow()}</a>
+      <div>
+      <img src="images/icons8-empty-flag-24.png">
+      <img src="images/icons8-facebook-like-24.png">
+      <img src="images/icons8-retweet-24.png">
+      </div>
     </footer>
     </article>
   `;
@@ -66,14 +81,13 @@ const postTweets = () =>{
         data: $(this).serialize()//don't need to get the value to serialize, the value/data is the input;
         })
       .then(loadTweets);
+      $("textarea").val("");
+      $(".counter").text(140);
     }    
   })
 };
 
 const loadTweets = () =>{
-  // const $clickSubmit = $("#submitTweet");
-
-  // $clickSubmit.on("click", () =>{
     
     $.ajax({
       url: "http://localhost:8080/tweets",
@@ -88,7 +102,12 @@ const loadTweets = () =>{
 const showForm = () =>{
   $("#compose").click(() =>{
     $(".tweet-submit").toggle("slow");
+    $(".tweet-submit").focus();
   })
+};
+
+const titleSpin = () =>{
+
 }
 
 $(document).ready(function(){

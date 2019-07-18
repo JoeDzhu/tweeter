@@ -1,13 +1,12 @@
 .tweets {
-  display:flex;
   height:600px;
   background-color:#ffffff;
   width:100%;
-  flex-direction:column;
 }
 
 .tweet {
   padding:5px;
+  margin:1rem 0;
   border:solid;
   height:200px;
   background-color:#ffffff;
@@ -45,4 +44,8 @@
 .fot {
   display:flex;
   justify-content: space-between;
+}
+
+.icons:hover {
+  display: inline;
 }
