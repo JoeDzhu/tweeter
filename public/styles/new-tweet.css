@@ -34,9 +34,3 @@ textarea {
 .counter.error {
   color:red;
 }
-
-  /* 此处语法和js不同，.只是表示class，和前面的counter是并列关系，也就是jQuery
-  会去找既有counter又有error的，进行处理；不过，前面counter要或者不要，都可以
-  但逻辑有所不同；
-  addClass(error)后，html中的既有又有的部分，会变红；如果没要前面的error，增加class
-  之后，html中，有error的会变红 */

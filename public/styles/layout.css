@@ -4,12 +4,6 @@
  * Do not modify these two selectors, please
  */
 
-/* * {
-  border: dotted red;
-} */
-/* 用这个看每个box的位置，然后做页面调整，之后去掉，另外，记得用overflow来控制特定box的位置，不被挤来挤去。 */
-
-
 html {
   box-sizing: border-box;
 }

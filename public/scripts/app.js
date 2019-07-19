@@ -9,17 +9,9 @@ const escape =  function(str) {
   div.appendChild(document.createTextNode(str));
   console.log(div.innerHTML);
   return div.innerHTML;
-//in the console, malicious become &lt;script&gt;$('body').empty()&lt;/script&gt;
 };
 
 const createTweetElement = function(tweet) {
-//   <header class="headProfile">
-//   <div>
-//     <img src="https://i.imgur.com/73hZDYK.png">
-//     <a>Newton</a>
-//   </div>
-//   <div>@SirIsaac</div>
-// </header>
 
   const markup =`
     <article class="tweet">
@@ -45,12 +37,12 @@ const createTweetElement = function(tweet) {
   `;
   return markup;
 };
-// moment.fromNow(true) doesn't work?
+
 const renderTweets = function(tweets) {
   const $tweetAtweet = $(".tweets");
   for(tweet of tweets) {
     let $template = createTweetElement(tweet);
-    $tweetAtweet.prepend($template);//此处不要用id，id是唯一的，如果是loop的，id重名了，但class就没啥问题；
+    $tweetAtweet.prepend($template);
   }
 };
 
@@ -58,7 +50,7 @@ const postTweets = () =>{
   
   const $submitTweets = $("#tweet-submit");
 
-  $submitTweets.submit(function (e){//the submit event is attached to the form not input, how they built it;
+  $submitTweets.submit(function (e){
     
     e.preventDefault();
 
@@ -78,7 +70,7 @@ const postTweets = () =>{
       $.ajax({
         url: "http://localhost:8080/tweets", 
         method: "POST",
-        data: $(this).serialize()//don't need to get the value to serialize, the value/data is the input;
+        data: $(this).serialize()
         })
       .then(loadTweets);
       $("textarea").val("");
@@ -102,16 +94,23 @@ const loadTweets = () =>{
 const showForm = () =>{
   $("#compose").click(() =>{
     $("#tweet-submit").toggle("slow");
-    $("#tweet-textarea").focus();//focus is on textarea, toggle is on the form.
+    $("#tweet-textarea").focus();
   })
 };
 
 const titleSpin = () =>{
-
+  setInterval(function (){
+    let charArray = document.title.split("");
+    let lastChar = charArray.pop();
+    charArray.unshift(lastChar);
+    let newTitle = charArray.join("");
+    document.title = newTitle;
+  },500);
 }
 
 $(document).ready(function(){
   postTweets();
   loadTweets();
-  showForm();//always use document.ready to load any js funcs;
+  showForm();
+  titleSpin();
 });
