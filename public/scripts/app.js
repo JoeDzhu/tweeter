@@ -56,7 +56,7 @@ const renderTweets = function(tweets) {
 
 const postTweets = () =>{
   
-  const $submitTweets = $(".tweet-submit");
+  const $submitTweets = $("#tweet-submit");
 
   $submitTweets.submit(function (e){//the submit event is attached to the form not input, how they built it;
     
@@ -101,8 +101,8 @@ const loadTweets = () =>{
 
 const showForm = () =>{
   $("#compose").click(() =>{
-    $(".tweet-submit").toggle("slow");
-    $(".tweet-submit").focus();
+    $("#tweet-submit").toggle("slow");
+    $("#tweet-textarea").focus();//focus is on textarea, toggle is on the form.
   })
 };
 

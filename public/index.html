@@ -48,8 +48,8 @@
     <main class="container">
       <section>
         <div class="stop-typing" style="display: none">☠Hey you, stop right there. No more than 140 chars.☠</div>
-        <form style="display:none;" class="tweet-submit" method="POST" action="http://localhost:8080/tweets">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <form style="display:none;" id="tweet-submit" method="POST" action="http://localhost:8080/tweets">
+          <textarea name="text" id="tweet-textarea" placeholder="What are you humming about?"></textarea>
           <div class="tweetCount">
             <input id="submitTweet" type="submit" value="Tweet">
             <span class="counter">140</span>
@@ -70,7 +70,7 @@
           </div>
           <footer class="fot">
             <div>145 days ago</div>
-            <div class="icons" style="display: none">
+            <div class="icons">
               <img src="images/icons8-empty-flag-24.png">
               <img src="images/icons8-facebook-like-24.png">
               <img src="images/icons8-retweet-24.png">
