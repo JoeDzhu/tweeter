@@ -4,16 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape =  function(str) {
-  let div = document.createElement('div');
+const escape = function(str) {
+  let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   console.log(div.innerHTML);
   return div.innerHTML;
 };
 
 const createTweetElement = function(tweet) {
-
-  const markup =`
+  const markup = `
     <article class="tweet">
     <header class="headProfile">
       <div>
@@ -40,77 +39,56 @@ const createTweetElement = function(tweet) {
 
 const renderTweets = function(tweets) {
   const $tweetAtweet = $(".tweets");
-  for(tweet of tweets) {
+  for (tweet of tweets) {
     let $template = createTweetElement(tweet);
     $tweetAtweet.prepend($template);
   }
 };
 
-const postTweets = () =>{
-  
+const postTweets = () => {
   const $submitTweets = $("#tweet-submit");
 
-  $submitTweets.submit(function (e){
-    
+  $submitTweets.submit(function(e) {
     e.preventDefault();
 
     const inputLen = $("textarea").val().length;
-    
+
     if (inputLen === 0 || null) {
       alert("Type something.");
-    }
-  
-    else if (inputLen > 140) {
+    } else if (inputLen > 140) {
       $(".stop-typing").slideDown();
-    }
-
-    else {
+    } else {
       $(".stop-typing").slideUp();
 
       $.ajax({
-        url: "http://localhost:8080/tweets", 
+        url: "http://localhost:8080/tweets",
         method: "POST",
         data: $(this).serialize()
-        })
-      .then(loadTweets);
+      }).then(loadTweets);
       $("textarea").val("");
       $(".counter").text(140);
-    }    
-  })
+    }
+  });
 };
 
-const loadTweets = () =>{
-    
-    $.ajax({
-      url: "http://localhost:8080/tweets",
-      method: "GET",
-    })
-    .then(function (moretweets) {
-      renderTweets(moretweets.slice(2));
-    })
-
+const loadTweets = () => {
+  $.ajax({
+    url: "http://localhost:8080/tweets",
+    method: "GET"
+  }).then(function(moretweets) {
+    renderTweets(moretweets.slice(2));
+  });
 };
 
-const showForm = () =>{
-  $("#compose").click(() =>{
+const showForm = () => {
+  $("#compose").click(() => {
     $("#tweet-submit").toggle("slow");
     $("#tweet-textarea").focus();
-  })
+  });
 };
 
-const titleSpin = () =>{
-  setInterval(function (){
-    let charArray = document.title.split("");
-    let lastChar = charArray.pop();
-    charArray.unshift(lastChar);
-    let newTitle = charArray.join("");
-    document.title = newTitle;
-  },500);
-}
-
-$(document).ready(function(){
+$(document).ready(function() {
   postTweets();
   loadTweets();
   showForm();
-  titleSpin();
 });
