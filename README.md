@@ -3,8 +3,8 @@
 Tweeter is a simple, single-page Twitter clone. Thanks to all the mentors and good people I have been working with, who helped me substantially when I have been struggling with this task, especially when I was being hammered by the CSS sheets.
 
 ## Final Product
-!["Screenshot of over 750px look"](https://github.com/JoeDzhu/tweeter/blob/master/docs/Over750pxLook.png)
-!["Screenshot of smaller than 750px look"](https://github.com/JoeDzhu/tweeter/blob/master/docs/SmallerThan750pxLook.png)
+!["NewLook1"](https://github.com/JoeDzhu/tweeter/blob/master/docs/NewLook1.png)
+!["NewLook2"](https://github.com/JoeDzhu/tweeter/blob/master/docs/NewLook2.png)
 
 ## Getting Started
 
