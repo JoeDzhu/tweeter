@@ -7,7 +7,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -19,53 +21,18 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- .container {
-   padding:2rem;
-   text-align: center;
-   margin:0 auto;
-   width: 100%;
-   text-align: center;
-   background-color: #f4f1ec;
- }
-
-@media screen and (min-width: 750px) {
-  html header {
-    position:fixed;
-    width: 30%;
-    margin:3.5rem;
-  }
-
-  html main.container {
-    position:fixed;
-    top:8rem;
-    right:2rem;
-    width:65%;
-    padding:10px;
-  }
-
-  .tweets {
-    height:250px;
-  }
-
-  .tweet {
-    padding:0 0 0 0;
-    height:100%;
-  }
-
-  .headProfile {
-    width:45%;
-    margin:0 0 0 0;
-  }
-
-  .singleTweet {
-    margin-top:5%;
-    display: blcok;
-  }
+.container {
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  background-color: #f4f1ec;
 }
