@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -53,9 +47,7 @@ const postTweets = () => {
 
     const inputLen = $("textarea").val().length;
 
-    if (inputLen === 0 || null) {
-      alert("Type something.");
-    } else if (inputLen > 140) {
+    if (inputLen === 0 || inputLen > 140) {
       $(".stop-typing").slideDown();
     } else {
       $(".stop-typing").slideUp();
